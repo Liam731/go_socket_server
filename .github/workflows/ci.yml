@@ -13,10 +13,6 @@ jobs:
     services:
       redis:
         image: redis:latest
-        env:
-          REDIS_ADDRESS: 'redis:6379'
-          REDIS_PASSWORD: ''
-          REDIS_DB: '0'
         options: >-
           --health-cmd "redis-cli ping"
           --health-interval 10s
@@ -37,6 +33,14 @@ jobs:
 
     - name: Print current directory
       run: pwd
+
+
+    - name: Set up environment variables
+      run: |
+        echo "REDIS_ADDRESS=redis:6379" >> $GITHUB_ENV
+        echo "REDIS_PASSWORD=" >> $GITHUB_ENV
+        echo "REDIS_DB=0" >> $GITHUB_ENV
+        echo "SERVER_ADDRESS=:8080" >> $GITHUB_ENV
 
     - name: Show environment variables
       run: env
