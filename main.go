@@ -3,11 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"go_socket_server/util"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
-	"websocket/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"

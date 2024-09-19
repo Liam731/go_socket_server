@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
+	"go_socket_server/util"
 	"testing"
 	"time"
-	"websocket/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
@@ -65,6 +65,7 @@ func TestWebSocketConnection(t *testing.T) {
 
 	// Create WebSocket connection using the helper function.
 	ws := createWebSocketConnection(t)
+	// defer ws.Close()
 
 	// Send a test message to verify the connection is open.
 	err := ws.WriteMessage(websocket.TextMessage, []byte("test"))
