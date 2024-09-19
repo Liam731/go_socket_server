@@ -27,7 +27,7 @@ jobs:
       run: go mod tidy
 
     - name: Copy config file
-      run: cp ./app.env /home/runner/work/go_socket_server/go_socket_server/app.env
+      run: cp /home/runner/work/go_socket_server/go_socket_server/app.env
 
     - name: Print current directory
       run: pwd
