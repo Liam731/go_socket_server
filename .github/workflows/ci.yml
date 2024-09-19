@@ -26,9 +26,6 @@ jobs:
     - name: Install dependencies
       run: go mod tidy
 
-    - name: Copy config file
-      run: cp ./app.env
-
     - name: Print current directory
       run: pwd
 
